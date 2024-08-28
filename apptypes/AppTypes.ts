@@ -10,6 +10,8 @@ export interface Master {
 
 export enum APIURL {
   PRODURL = "https://onlineucolps.in:450/lendperfect",
+  LOCALURL = "http://192.168.0.140:9090",
+  UATURL = "https://lpsonlineuat.ucoonline.in:1801/lendperfect/",
 }
 
 export interface AttendanceSaveReq {
@@ -127,8 +129,34 @@ export interface Lov {
 
 export enum ResponseStatusCode {
   STATUSOK = "200 OK",
+  CODE200 = 200,
+  CODE401 = 401,
+  STATUSUNAUTHORIZED = "UNAUTHORIZED",
 }
 
 export enum StaticDataMasterId {
   LeadCategory = 1,
+  LeadStatus = 24,
+}
+
+export interface DocumentLOVList {
+  dmActiveFlag: string;
+  dmDocumentDescription: string;
+  dmDocumentId: number;
+  dmDocumentName: string;
+  dmDocumentType: string;
+  dmEsignDocument: string;
+  dmEsignSecurityRequired: string;
+  dmLastModifedUser: string;
+  dmLastModifiedOrg: string;
+  dmMastModifiedDate: string;
+  dmPageShortCode: string;
+  dmSeqId: number;
+  ownerOrgId: string;
+}
+
+export interface ApplicantListLOV {
+  applicantType: string;
+  customerId: string;
+  type: string;
 }

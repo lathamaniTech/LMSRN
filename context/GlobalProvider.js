@@ -10,6 +10,8 @@ export const GlobalProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [gpsData, setGpsStatusData] = useState("");
+  const [leadId, setLeadId] = useState(""); //LP240820004
+  const [userId, setUserId] = useState("60011");
 
   useEffect(() => {
     getCurrentUser()
@@ -45,6 +47,10 @@ export const GlobalProvider = ({ children }) => {
         setIsLoading,
         gpsData,
         setGpsStatusData,
+        leadId,
+        setLeadId,
+        userId,
+        setUserId,
       }}
     >
       {children}

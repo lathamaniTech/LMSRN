@@ -1,4 +1,16 @@
 export const AlertMessage = {
   ClientVisitSubmitted: "Client Visit Details Submitted Successfully.",
   ResponseFailed: "Response Failed",
+  DocumentListEmpty: "Document list is empty",
+  ApplicatListEmpty: "Applicates list is empty",
+  DocumentDetailsList: "Applicants document details list is empty.",
+  DocumentAddedMsg: "This document is added.",
+  DocumentSizeMsg: "Image size is more than 1.25MB, please retake the image.",
+  NoImageFromServer: "There is no image from server.",
+  DocumentSaved: "Document details saved successfully",
+  AlertTitle: "Alert",
+  DeleteAlertMsg: "Do you want to delete document?",
+  UnAuthorizedMsg: "Unauthorized request or Not save in server",
+  DeletedSuccessfully: "Document Details deleted successfully",
+  NoLeadsFromServer: "There is no leads from server.",
 };

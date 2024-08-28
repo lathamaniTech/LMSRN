@@ -23,7 +23,7 @@ import { router } from "expo-router";
 import * as AppType from "@/apptypes/AppTypes";
 import moment from "moment";
 import LoadingControl from "@/components/loading";
-import { postMethod } from "@/lib/appAPIServices";
+import { getAPIMethod, postMethod } from "@/lib/appAPIServices";
 import { dbopsMainProductsMasters, dbopsStaticDataMasters } from "@/services";
 import { Endpoints } from "@/constants";
 import { getLocationCoordinates } from "@/lib/geoLocationService";

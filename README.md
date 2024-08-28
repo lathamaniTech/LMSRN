@@ -44,6 +44,8 @@ npx expo install expo-camera
 
 npx expo install expo-image-picker
 
-npm install react-native-reanimated@2.9.1
-npm install react-native-reanimated : "~3.10.1
-npm install reanimated-bottom-sheet
+npm install gorhom/bottom-sheet
+
+npx expo install expo-file-system
+
+npx expo install expo-web-browser

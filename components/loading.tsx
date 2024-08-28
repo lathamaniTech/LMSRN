@@ -1,3 +1,8 @@
+/*
+@author         :   Lathamani
+@since          :   1/08/2024
+@description    :   resuable spinner loading component
+*/
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import React from 'react';
 

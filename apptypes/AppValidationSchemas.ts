@@ -49,8 +49,10 @@ const ClientVisitFormValidationSchema = yup.object().shape({
 });
 
 const DocumentValidationSchema = yup.object().shape({
-  applicantType: yup.string().required("Interest Product is Required"),
-  docClassification: yup.string().required("Interest Product is Required"),
+  applicantType: yup.string().required("Applicant type is required"),
+  docClassification: yup
+    .string()
+    .required("Document Classification is required"),
 });
 
 export {
