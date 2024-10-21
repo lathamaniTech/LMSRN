@@ -1,5 +1,5 @@
-import { View, Text, Pressable } from "react-native";
-import React, { useEffect } from "react";
+import { View, Text, Pressable, Alert } from "react-native";
+import React, { useEffect, useState } from "react";
 import { DrawerActions } from "@react-navigation/native";
 import { router, useNavigation } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -8,7 +8,9 @@ import BannerTopComponent from "@/components/BannerTop";
 import Dashboard from "@/components/Dashboard";
 import { Ionicons } from "@expo/vector-icons";
 import { dbServices } from "@/services";
-import { DBSchemaConstants } from "@/constants";
+import { DBSchemaConstants, Endpoints } from "@/constants";
+
+
 const Home = () => {
   const navigation = useNavigation();
 
@@ -44,6 +46,7 @@ const Home = () => {
     testTable();
   });
 
+
   return (
     <View className="flex column">
       <SubHeader />
@@ -55,14 +58,12 @@ const Home = () => {
           </View>
           <View
             className="
-        flex justify-center items-center
-        shadow
+        flex justify-center items-center shadow
         bg-orange rounded-full w-[40px] h-[40px] "
           >
             <TouchableOpacity
               className=""
-              // onPress={() => router.push("(leadtabs)/sourcing")}
-              onPress={testTable}
+              onPress={() => router.push("(leadtabs)/sourcing")}
             >
               <Ionicons name="add" size={24} color="black" />
             </TouchableOpacity>

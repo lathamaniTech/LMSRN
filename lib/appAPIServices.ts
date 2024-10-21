@@ -31,13 +31,16 @@ export const postMethod = async (apiMethod: string, reqBody: any) => {
 export const getAPIMethod = async (apiMethod: string, params?: string) => {
   console.info(`${apiURL}/${apiMethod}`);
   try {
-    const { data } = params
-      ? await axios.get(`${apiURL}/${apiMethod}/${params}`, {
-          headers: options,
-        })
-      : await axios.get(`${apiURL}/${apiMethod}`, {
-          headers: options,
-        });
+    // const { data } = params
+    //   ? await axios.get(`${apiURL}/${apiMethod}/${params}`, {
+    //       headers: options,
+    //     })
+    //   : await axios.get(`${apiURL}/${apiMethod}`, {
+    //       headers: options,
+    //     });
+    const { data } = await axios.get(`${apiURL}/${apiMethod}`, {
+      headers: options,
+    });
     console.info(data, "response", apiMethod);
     return data;
   } catch (error) {

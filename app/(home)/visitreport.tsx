@@ -28,6 +28,7 @@ import { dbopsMainProductsMasters, dbopsStaticDataMasters } from "@/services";
 import { Endpoints } from "@/constants";
 import { getLocationCoordinates } from "@/lib/geoLocationService";
 import { AlertMessage } from "@/apptypes/AppStaticMessage";
+import { useGlobalContext } from "@/context/GlobalProvider";
 
 const validationSchema = ClientVisitFormValidationSchema;
 
@@ -37,6 +38,8 @@ const VisitReport = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loanProdList, setLoanProdList] = useState<AppType.KeyValueString[]>([]);
   const [leadCategoryList, setLeadCategoryList] = useState<AppType.KeyValueString[]>([]);
+  const { userId } = useGlobalContext();
+
 
   useEffect(() => {
     const fectLocation = async () => {
@@ -83,7 +86,6 @@ const VisitReport = () => {
   const submitClientForm = async (values: FormikValues, action: FormikHelpers<AppType.ClientVisitFormData>) => {
     try {
       setIsLoading(true);
-      const userId = "55655";
       const reqBody: AppType.ClientVisitRequest = {
         cvdSeqid: "0",
         cvdName: values.name,
@@ -102,9 +104,9 @@ const VisitReport = () => {
         cvdLeadType: values.leadCategory,
         cvdVisitDate: values.dateOfVisit,
         cvdVisitTime: values.timeOfVisit,
-        cvdCreatedBy: "55655",
+        cvdCreatedBy: userId,
         cvdCreatedOn: "",
-        cvdModifiedBy: "55655", // username
+        cvdModifiedBy: userId, // username
         cvdModifiedOn: "",
       };
       let resp = await postMethod(

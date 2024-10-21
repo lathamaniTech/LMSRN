@@ -10,8 +10,10 @@ const Endpoints = {
   getDocumentList: "origappattacheddocs/read-leadAttachedDocuments",
   downloadDocument: "origappattacheddocs/download-attached-document",
   deleteDocument: "origappattacheddocs/delete",
-  incompleteLeads: "lead-management/get-user-lead-details",
-  assinedLeadsInbox: "lead-management/get-user-lead-details/",
+  LeadInbox: "lead-management/get-user-lead-details",
+  CompleteLeads: "CLS",
+  IncompleteLeads: "INCM",
+  AssignedLeads: "ATM",
 };
 
 export default Endpoints;

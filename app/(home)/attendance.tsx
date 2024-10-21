@@ -19,6 +19,7 @@ import CustomButton from "@/components/CustomButton";
 import { Endpoints } from "@/constants";
 import { getLocationCoordinates } from "@/lib/geoLocationService";
 import { AlertMessage } from "@/apptypes/AppStaticMessage";
+import { useGlobalContext } from "@/context/GlobalProvider";
 
 const Attendance = () => {
   const initPunchData = { punchType: '', time: '', date: '' };
@@ -31,6 +32,7 @@ const Attendance = () => {
   const [punchInType, setPunchInType] = useState<AppType.PunchTypeData>(initPunchData);
   const [punchOutType, setPunchOutType] = useState<AppType.PunchTypeData>(initPunchData);
   const [isLoading, setIsLoading] = useState(false);
+  const { userId } = useGlobalContext();
 
   useEffect(() => {
     (async () => {
@@ -76,7 +78,7 @@ const Attendance = () => {
     try {
       setIsLoading(true);
       let req: AppType.AttendanceSaveReq = {
-        lnUserId: '55655',
+        lnUserId: userId,
         lnOrgCode: '012323',
         lnAddressline1: addressData.address1 ? addressData.address1 : '',
         lnAddressline2: addressData.address2 ? addressData.address2 : '',

@@ -11,7 +11,7 @@ export interface Master {
 export enum APIURL {
   PRODURL = "https://onlineucolps.in:450/lendperfect",
   LOCALURL = "http://192.168.0.140:9090",
-  UATURL = "https://lpsonlineuat.ucoonline.in:1801/lendperfect/",
+  UATURL = "https://lpsonlineuat.ucoonline.in:1801/lendperfect",
 }
 
 export interface AttendanceSaveReq {
